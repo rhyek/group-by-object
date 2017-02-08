@@ -1,0 +1,40 @@
+{
+  "name": "group-by-object",
+  "version": "1.0.0",
+  "description": "Group an array by primitive values or objects",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "webpack",
+    "test": "mocha",
+    "prepublish": "npm run build && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhyek/group-by-object.git"
+  },
+  "keywords": [
+    "node",
+    "javascript",
+    "group",
+    "by",
+    "object",
+    "groupby"
+  ],
+  "author": "https://github.com/rhyek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhyek/group-by-object/issues"
+  },
+  "homepage": "https://github.com/rhyek/group-by-object#readme",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "mocha": "^3.2.0",
+    "mocha-webpack": "^0.7.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "deep-equal": "^1.0.1"
+  }
+}
