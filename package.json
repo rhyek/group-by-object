@@ -1,6 +1,6 @@
 {
   "name": "group-by-object",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Group an array by primitive values or objects",
   "main": "dist/main.js",
   "scripts": {
@@ -30,6 +30,7 @@
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.2.2",
     "mocha": "^3.2.0",
     "webpack": "^2.2.1"
   },
