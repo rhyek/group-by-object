@@ -1,21 +1,16 @@
-const equal = require('deep-equal')
+const sortKeys = require('sort-keys')
 
-module.exports = function(array, keySelector, elementSelector = null) {
+module.exports = function (array, keySelector, elementSelector = null) {
+  const keys = {}
   const map = new Map()
-  array.forEach(item => {
-    const key = keySelector(item)
-    let found = null
-    for (let k of map.keys()) {
-      if (equal(key, k)) {
-        found = k
-        break
-      }
-    }
-    if (found === null) {
+  for (let item of array) {
+    const key = sortKeys(keySelector(item), {deep: true})
+    const str = JSON.stringify(key)
+    if (!(str in keys)) {
+      keys[str] = key
       map.set(key, [])
-      found = key
     }
-    map.get(found).push(elementSelector !== null ? elementSelector(item) : item)
-  })
+    map.get(keys[str]).push(elementSelector !== null ? elementSelector(item) : item)
+  }
   return map
 }
