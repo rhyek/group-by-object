@@ -1,13 +1,13 @@
 {
   "name": "group-by-object",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Group an array by primitive values or objects",
   "main": "dist/main.js",
   "scripts": {
     "dev": "webpack --watch",
     "build": "webpack",
     "test": "mocha",
-    "prepublish": "npm run build && npm run test"
+    "prepublishOnly": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",
