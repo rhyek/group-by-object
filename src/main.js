@@ -6,7 +6,7 @@ module.exports = function (array, keySelector, elementSelector = null) {
   for (let item of array) {
     const key = sortKeys(keySelector(item), {deep: true})
     const str = JSON.stringify(key)
-    if (!(str in keys)) {
+    if (typeof keys[str] === 'undefined') {
       keys[str] = key
       map.set(key, [])
     }
