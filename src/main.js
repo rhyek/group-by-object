@@ -1,6 +1,6 @@
 const sortKeys = require('sort-keys')
 
-module.exports = function (array, keySelector, elementSelector = null) {
+function groupBy (array, keySelector, elementSelector = null) {
   const keys = {}
   const map = new Map()
   array.forEach((item, index) => {
@@ -13,7 +13,19 @@ module.exports = function (array, keySelector, elementSelector = null) {
       keys[str] = key
       map.set(key, [])
     }
-    map.get(keys[str]).push(elementSelector !== null ? elementSelector(item) : item)
+    map.get(keys[str]).push(elementSelector !== null ? elementSelector(item, index) : item)
   })
   return map
 }
+
+groupBy.install = function (returnArray) {
+  Array.prototype.groupBy = function () {
+    let result = groupBy(this, ...arguments)
+    if (returnArray) {
+      result = Array.from(result)
+    }
+    return result
+  }
+}
+
+module.exports = groupBy

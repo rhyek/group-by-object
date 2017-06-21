@@ -1,6 +1,6 @@
 {
   "name": "group-by-object",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "Group an array by primitive values or objects",
   "main": "src/main.js",
   "scripts": {
