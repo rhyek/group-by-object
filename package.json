@@ -1,11 +1,9 @@
 {
   "name": "group-by-object",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Group an array by primitive values or objects",
-  "main": "dist/main.js",
+  "main": "src/main.js",
   "scripts": {
-    "dev": "webpack --watch",
-    "build": "webpack",
     "test": "mocha",
     "prepublishOnly": "npm run build && npm run test"
   },
@@ -28,11 +26,7 @@
   },
   "homepage": "https://github.com/rhyek/group-by-object#readme",
   "devDependencies": {
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-env": "^1.2.2",
-    "mocha": "^3.2.0",
-    "webpack": "^2.2.1"
+    "mocha": "^3.2.0"
   },
   "dependencies": {
     "sort-keys": "^2.0.0"
